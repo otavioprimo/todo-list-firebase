@@ -1,0 +1,24 @@
+<ion-content padding>
+  <img src="assets/imgs/yoda1.gif" class="logo scale-in-center">
+
+  <ion-card>
+    <ion-card-header>
+      <h1 class="title">Todo Yoda</h1>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-input type="email" placeholder="Email" [(ngModel)]="email" autocomplete></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="password" placeholder="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+
+      <button ion-button block round class="btn-login" (click)="login()">Login</button>
+      <p>OR</p>
+      <button ion-button block round color="dark" (click)="signup()">Singup</button>
+    </ion-card-content>
+  </ion-card>
+
+  <button ion-button clear (click)="forgotPass()">My password I forgot</button>
+</ion-content>

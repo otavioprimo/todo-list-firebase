@@ -13,6 +13,7 @@ $app-direction: ltr;
 
 
 @import "ionic.globals";
+@import "./animations.scss";
 
 
 // Shared Variables
@@ -34,13 +35,14 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
+  primary:    #75934e,
+  secondary:  #125bd1,
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222
 );
 
+$toolbar-background: color($colors,primary);
 
 // App iOS Variables
 // --------------------------------------------------
