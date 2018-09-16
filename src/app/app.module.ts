@@ -11,6 +11,8 @@ import { config } from './firebase.config';
 
 import { MyApp } from './app.component';
 import { AuthProvider } from '../providers/auth/auth';
+import { RequestsProvider } from '../providers/requests/requests';
+import { UserProvider } from '../providers/user/user';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { AuthProvider } from '../providers/auth/auth';
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     AuthProvider,
-    AngularFireAuth
+    AngularFireAuth,
+    RequestsProvider,
+    UserProvider
   ]
 })
 export class AppModule { }
