@@ -46,7 +46,7 @@ export class AuthProvider {
       this.afireAuth.auth.signOut()
         .then(() => resolve(true))
         .catch((err) => reject(err));
-    })
+    });
   }
 
   isLogged() {

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { UserProvider } from '../../providers/user/user';
+import { AuthProvider } from '../../providers/auth/auth';
 
 /**
  * Generated class for the UserPage page.
@@ -15,11 +17,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class UserPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    private authService: AuthProvider) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad UserPage');
+
+  }
+
+  logout() {
+    this.authService.logout()
+      .then(data => {
+        console.log(data);
+        this.navCtrl.setRoot('LoginPage');
+      }).catch(err => {
+        console.log(err);
+      });
   }
 
 }

@@ -3,7 +3,7 @@
   <ion-navbar>
     <ion-title>Friends</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only>
+      <button ion-button icon-only (click)="addFriend()">
         <ion-icon name="person-add"></ion-icon>
       </button>
     </ion-buttons>
@@ -12,34 +12,38 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list no-lines>
+  <ion-list>
 
-    <div *ngIf="myRequests">
+    <div *ngIf="myRequests.length > 0">
       <ion-list-header>
         Requests
       </ion-list-header>
       <ion-item-sliding *ngFor="let item of myRequests">
         <ion-item>
           <h4>{{item.nickname}}</h4>
+          <p>{{item.email}}</p>
         </ion-item>
         <ion-item-options>
-          <button ion-button color="secondary" (click)="accept(item)">
-            <ion-icon name="checkmark"></ion-icon>
-            ADD
-          </button>
           <button ion-button color="danger" (click)="ignore(item)">
             <ion-icon name="trash"></ion-icon>
             NOPE
           </button>
+
+          <button ion-button color="secondary" (click)="accept(item)">
+            <ion-icon name="checkmark"></ion-icon>
+            ADD
+          </button>
+
         </ion-item-options>
       </ion-item-sliding>
     </div>
 
     <ion-list-header>
       Friends
-    </ion-list-header>
+    </ion-list-header> 
     <ion-item *ngFor="let item of myFriends">
       <h3>{{item.nickname}}</h3>
+      <p>{{item.email}}</p>
     </ion-item>
   </ion-list>
 </ion-content>
